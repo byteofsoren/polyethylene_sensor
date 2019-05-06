@@ -1,0 +1,4 @@
+(fp_lib_table
+  (lib (name polythene_sensor)(type KiCad)(uri ${KIPRJMOD}/polythene_sensor.pretty)(options "")(descr ""))
+  (lib (name One27)(type KiCad)(uri ${KIPRJMOD}/One27.pretty)(options "")(descr ""))
+)

@@ -1,0 +1,3 @@
+(sym_lib_table
+  (lib (name polythene_sensor-rescue)(type Legacy)(uri ${KIPRJMOD}/polythene_sensor-rescue.lib)(options "")(descr ""))
+)

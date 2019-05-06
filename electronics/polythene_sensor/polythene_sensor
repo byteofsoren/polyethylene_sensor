@@ -1,0 +1,116 @@
+.HEA
+.TIM Sun 05 May 2019 07:08:06 PM CEST
+.APP "Eeschema 5.1.2"
+
+.ADD_COM A1 "Arduino_UNO_R3"
+.ADD_COM Uin1 "CD74HC4067M"
+.ADD_COM Jfoam1 "Conn_02x16_Row_Letter_First"
+.ADD_COM Dprot1 "BZT52Bxx"
+.ADD_COM Rref1 "R"
+.ADD_COM Jfpow1 "Conn_01x02"
+.ADD_COM Uout1 "CD74HC4067M"
+
+
+.ADD_TER Jfoam1.a14 "Net-(Jfoam1-Pada14)"
+.TER     Uin1.18
+.ADD_TER Uin1.17 "Net-(Jfoam1-Pada15)"
+.TER     Jfoam1.a15
+.ADD_TER Jfoam1.a16 "Net-(Jfoam1-Pada16)"
+.TER     Uin1.16
+.ADD_TER A1.7 "GND"
+.TER     A1.6
+         A1.30
+         A1.29
+         Uout1.12
+         Uin1.12
+         Dprot1.2
+         Rref1.2
+         Jfpow1.2
+.ADD_TER Rref1.1 "Net-(A1-Pad9)"
+.TER     Uout1.1
+         Dprot1.1
+         A1.9
+.ADD_TER Uin1.19 "Net-(Jfoam1-Pada13)"
+.TER     Jfoam1.a13
+.ADD_TER Uin1.1 "Net-(Jfpow1-Pad1)"
+.TER     Jfpow1.1
+.ADD_TER Uout1.24 "+5V"
+.TER     Uin1.24
+         A1.5
+.ADD_TER Jfoam1.a9 "Net-(Jfoam1-Pada9)"
+.TER     Uin1.23
+.ADD_TER Jfoam1.a1 "Net-(Jfoam1-Pada1)"
+.TER     Uin1.9
+.ADD_TER Uin1.8 "Net-(Jfoam1-Pada2)"
+.TER     Jfoam1.a2
+.ADD_TER Uin1.7 "Net-(Jfoam1-Pada3)"
+.TER     Jfoam1.a3
+.ADD_TER Uin1.6 "Net-(Jfoam1-Pada4)"
+.TER     Jfoam1.a4
+.ADD_TER Jfoam1.a5 "Net-(Jfoam1-Pada5)"
+.TER     Uin1.5
+.ADD_TER Jfoam1.a6 "Net-(Jfoam1-Pada6)"
+.TER     Uin1.4
+.ADD_TER Jfoam1.a7 "Net-(Jfoam1-Pada7)"
+.TER     Uin1.3
+.ADD_TER Jfoam1.a8 "Net-(Jfoam1-Pada8)"
+.TER     Uin1.2
+.ADD_TER Uin1.22 "Net-(Jfoam1-Pada10)"
+.TER     Jfoam1.a10
+.ADD_TER Uin1.21 "Net-(Jfoam1-Pada11)"
+.TER     Jfoam1.a11
+.ADD_TER Uin1.20 "Net-(Jfoam1-Pada12)"
+.TER     Jfoam1.a12
+.ADD_TER Uout1.20 "Net-(Jfoam1-Padb5)"
+.TER     Jfoam1.b5
+.ADD_TER Uout1.16 "Net-(Jfoam1-Padb1)"
+.TER     Jfoam1.b1
+.ADD_TER Uout1.17 "Net-(Jfoam1-Padb2)"
+.TER     Jfoam1.b2
+.ADD_TER Uout1.18 "Net-(Jfoam1-Padb3)"
+.TER     Jfoam1.b3
+.ADD_TER Jfoam1.b4 "Net-(Jfoam1-Padb4)"
+.TER     Uout1.19
+.ADD_TER Jfoam1.b9 "Net-(Jfoam1-Padb9)"
+.TER     Uout1.2
+.ADD_TER Uout1.21 "Net-(Jfoam1-Padb6)"
+.TER     Jfoam1.b6
+.ADD_TER Uout1.22 "Net-(Jfoam1-Padb7)"
+.TER     Jfoam1.b7
+.ADD_TER Jfoam1.b8 "Net-(Jfoam1-Padb8)"
+.TER     Uout1.23
+.ADD_TER Jfoam1.b10 "Net-(Jfoam1-Padb10)"
+.TER     Uout1.3
+.ADD_TER Jfoam1.b11 "Net-(Jfoam1-Padb11)"
+.TER     Uout1.4
+.ADD_TER Jfoam1.b12 "Net-(Jfoam1-Padb12)"
+.TER     Uout1.5
+.ADD_TER Uout1.6 "Net-(Jfoam1-Padb13)"
+.TER     Jfoam1.b13
+.ADD_TER Jfoam1.b14 "Net-(Jfoam1-Padb14)"
+.TER     Uout1.7
+.ADD_TER Uout1.8 "Net-(Jfoam1-Padb15)"
+.TER     Jfoam1.b15
+.ADD_TER Jfoam1.b16 "Net-(Jfoam1-Padb16)"
+.TER     Uout1.9
+.ADD_TER A1.17 "/S0"
+.TER     Uout1.13
+.ADD_TER A1.18 "/S1"
+.TER     Uout1.14
+.ADD_TER A1.19 "/S2"
+.TER     Uout1.11
+.ADD_TER A1.20 "/S3"
+.TER     Uout1.10
+.ADD_TER Uin1.10 "/S4"
+.TER     A1.21
+.ADD_TER Uin1.11 "/S5"
+.TER     A1.22
+.ADD_TER Uin1.14 "/S6"
+.TER     A1.23
+.ADD_TER A1.24 "/S7"
+.TER     Uin1.13
+.ADD_TER A1.25 "/EN"
+.TER     Uout1.15
+         Uin1.15
+
+.END

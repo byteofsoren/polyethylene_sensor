@@ -1,0 +1,452 @@
+EESchema Schematic File Version 4
+EELAYER 29 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L power:GND #PWR03
+U 1 1 5CCDFED3
+P 3100 4800
+F 0 "#PWR03" H 3100 4550 50  0001 C CNN
+F 1 "GND" H 3105 4627 50  0000 C CNN
+F 2 "" H 3100 4800 50  0001 C CNN
+F 3 "" H 3100 4800 50  0001 C CNN
+	1    3100 4800
+	-1   0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR05
+U 1 1 5CCE096E
+P 5950 2600
+F 0 "#PWR05" H 5950 2350 50  0001 C CNN
+F 1 "GND" H 5955 2427 50  0000 C CNN
+F 2 "" H 5950 2600 50  0001 C CNN
+F 3 "" H 5950 2600 50  0001 C CNN
+	1    5950 2600
+	1    0    0    1   
+$EndComp
+Wire Wire Line
+	8650 3000 9150 3000
+Entry Wire Line
+	9150 3000 9250 3100
+Text Label 8750 3000 0    50   ~ 0
+S0
+Entry Wire Line
+	9150 3100 9250 3200
+Entry Wire Line
+	9150 3200 9250 3300
+Entry Wire Line
+	9150 3300 9250 3400
+Entry Wire Line
+	9150 3400 9250 3500
+Entry Wire Line
+	9150 3500 9250 3600
+Entry Wire Line
+	9150 3600 9250 3700
+Entry Wire Line
+	9150 3700 9250 3800
+Entry Wire Line
+	9150 3800 9250 3900
+Wire Wire Line
+	8650 3100 9150 3100
+Wire Wire Line
+	8650 3200 9150 3200
+Wire Wire Line
+	8650 3300 9150 3300
+Wire Wire Line
+	8650 3400 9150 3400
+Text Label 8750 3100 0    50   ~ 0
+S1
+Text Label 8750 3200 0    50   ~ 0
+S2
+Text Label 8750 3300 0    50   ~ 0
+S3
+Text Label 8750 3400 0    50   ~ 0
+S4
+Entry Wire Line
+	6700 3600 6800 3700
+Entry Wire Line
+	6700 3700 6800 3800
+Entry Wire Line
+	6700 3800 6800 3900
+Entry Wire Line
+	6700 3900 6800 4000
+Entry Wire Line
+	2300 3600 2200 3700
+Entry Wire Line
+	2300 3700 2200 3800
+Entry Wire Line
+	2300 3800 2200 3900
+Entry Wire Line
+	2300 3900 2200 4000
+Entry Wire Line
+	6700 3200 6800 3300
+Wire Wire Line
+	2300 3600 2600 3600
+Wire Wire Line
+	2300 3700 2600 3700
+Wire Wire Line
+	2300 3800 2600 3800
+Wire Wire Line
+	2300 3900 2600 3900
+$Comp
+L 74xx:CD74HC4067M Uin1
+U 1 1 5CCDB80B
+P 3100 3700
+F 0 "Uin1" H 3100 4150 50  0000 C CNN
+F 1 "CD74HC4067M" V 3100 3650 50  0000 C CNN
+F 2 "Package_SO:SOIC-24W_7.5x15.4mm_P1.27mm" H 4000 2700 50  0001 C CIN
+F 3 "http://www.ti.com/lit/ds/symlink/cd74hc4067.pdf" H 2750 4550 50  0001 C CNN
+	1    3100 3700
+	1    0    0    -1  
+$EndComp
+Entry Wire Line
+	2300 4300 2200 4400
+Wire Wire Line
+	2300 4300 2600 4300
+Wire Bus Line
+	6800 5200 2200 5200
+Wire Bus Line
+	9250 5200 6800 5200
+Connection ~ 6800 5200
+Text Label 6500 3200 0    50   ~ 0
+EN
+Text Label 2400 4300 0    50   ~ 0
+EN
+Text Label 6500 3600 0    50   ~ 0
+S0
+Text Label 6500 3700 0    50   ~ 0
+S1
+Text Label 6500 3800 0    50   ~ 0
+S2
+Text Label 6500 3900 0    50   ~ 0
+S3
+Text Label 2400 3600 0    50   ~ 0
+S4
+Text Label 2400 3700 0    50   ~ 0
+S5
+Text Label 2400 3800 0    50   ~ 0
+S6
+Text Label 2400 3900 0    50   ~ 0
+S7
+Wire Wire Line
+	3600 3000 4300 3000
+Wire Wire Line
+	3600 3100 4300 3100
+Wire Wire Line
+	3600 3200 4300 3200
+Wire Wire Line
+	3600 3300 4300 3300
+Wire Wire Line
+	3600 3400 4300 3400
+Wire Wire Line
+	3600 3500 4300 3500
+Wire Wire Line
+	3600 3600 4300 3600
+Wire Wire Line
+	3600 3700 4300 3700
+Wire Wire Line
+	3600 3800 4300 3800
+Wire Wire Line
+	3600 3900 4300 3900
+Wire Wire Line
+	3600 4000 4300 4000
+Wire Wire Line
+	3600 4100 4300 4100
+Wire Wire Line
+	3600 4200 4300 4200
+Wire Wire Line
+	3600 4300 4300 4300
+Wire Wire Line
+	3600 4400 4300 4400
+Wire Wire Line
+	3600 4500 4300 4500
+$Comp
+L Diode:BZT52Bxx Dprot1
+U 1 1 5CDA8F07
+P 6550 4450
+F 0 "Dprot1" V 6504 4529 50  0000 L CNN
+F 1 "BZT52Bxx" V 6595 4529 50  0000 L CNN
+F 2 "Diodes_SMD:D_SOD-123" H 6550 4275 50  0001 C CNN
+F 3 "https://diotec.com/tl_files/diotec/files/pdf/datasheets/bzt52b2v4.pdf" H 6550 4450 50  0001 C CNN
+	1    6550 4450
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R Rref1
+U 1 1 5CDBA01B
+P 7150 4450
+F 0 "Rref1" H 7220 4496 50  0000 L CNN
+F 1 "R" H 7220 4405 50  0000 L CNN
+F 2 "Resistors_SMD:R_0805_HandSoldering" V 7080 4450 50  0001 C CNN
+F 3 "~" H 7150 4450 50  0001 C CNN
+	1    7150 4450
+	1    0    0    -1  
+$EndComp
+Connection ~ 6550 4300
+Wire Wire Line
+	6550 4600 6550 4700
+Wire Wire Line
+	6550 4700 7000 4700
+Wire Wire Line
+	7150 4700 7150 4600
+Wire Wire Line
+	6550 4300 7150 4300
+Wire Wire Line
+	7650 3400 7150 3400
+Wire Wire Line
+	7150 3400 7150 4300
+Connection ~ 7150 4300
+$Comp
+L power:GND #PWR07
+U 1 1 5CDC317B
+P 7000 4700
+F 0 "#PWR07" H 7000 4450 50  0001 C CNN
+F 1 "GND" H 7005 4527 50  0000 C CNN
+F 2 "" H 7000 4700 50  0001 C CNN
+F 3 "" H 7000 4700 50  0001 C CNN
+	1    7000 4700
+	1    0    0    -1  
+$EndComp
+Connection ~ 7000 4700
+Wire Wire Line
+	7000 4700 7150 4700
+$Comp
+L Connector_Generic:Conn_01x02 Jfpow1
+U 1 1 5CDDD1C6
+P 2100 3200
+F 0 "Jfpow1" H 2018 3417 50  0000 C CNN
+F 1 "Conn_01x02" H 2018 3326 50  0000 C CNN
+F 2 "polythene_sensor:Cage_clamp_2pole" H 2100 3200 50  0001 C CNN
+F 3 "https://www.elfa.se/Web/Downloads/_t/ds/2061-601_998-404_eng_tds.pdf" H 2100 3200 50  0001 C CNN
+	1    2100 3200
+	-1   0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR01
+U 1 1 5CDDE928
+P 2300 3300
+F 0 "#PWR01" H 2300 3050 50  0001 C CNN
+F 1 "GND" H 2305 3127 50  0000 C CNN
+F 2 "" H 2300 3300 50  0001 C CNN
+F 3 "" H 2300 3300 50  0001 C CNN
+	1    2300 3300
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	2300 3200 2600 3200
+$Comp
+L northspawn_v2-cache:power_+5V #PWR08
+U 1 1 5CDF49A1
+P 7950 2150
+F 0 "#PWR08" H 7950 2000 50  0001 C CNN
+F 1 "power_+5V" H 7965 2323 50  0000 C CNN
+F 2 "" H 7950 2150 50  0001 C CNN
+F 3 "" H 7950 2150 50  0001 C CNN
+	1    7950 2150
+	1    0    0    -1  
+$EndComp
+$Comp
+L northspawn_v2-cache:power_+5V #PWR02
+U 1 1 5CDF5A3E
+P 3100 2450
+F 0 "#PWR02" H 3100 2300 50  0001 C CNN
+F 1 "power_+5V" H 3115 2623 50  0000 C CNN
+F 2 "" H 3100 2450 50  0001 C CNN
+F 3 "" H 3100 2450 50  0001 C CNN
+	1    3100 2450
+	1    0    0    -1  
+$EndComp
+$Comp
+L northspawn_v2-cache:power_+5V #PWR04
+U 1 1 5CDF7B84
+P 5250 4800
+F 0 "#PWR04" H 5250 4650 50  0001 C CNN
+F 1 "power_+5V" H 5265 4973 50  0000 C CNN
+F 2 "" H 5250 4800 50  0001 C CNN
+F 3 "" H 5250 4800 50  0001 C CNN
+	1    5250 4800
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5950 4950 5250 4950
+Wire Wire Line
+	5250 4950 5250 4800
+Wire Wire Line
+	3100 2450 3100 2700
+Wire Wire Line
+	7950 2150 7950 2400
+$Comp
+L power:GND #PWR06
+U 1 1 5CE03B42
+P 7000 3300
+F 0 "#PWR06" H 7000 3050 50  0001 C CNN
+F 1 "GND" H 7005 3127 50  0000 C CNN
+F 2 "" H 7000 3300 50  0001 C CNN
+F 3 "" H 7000 3300 50  0001 C CNN
+	1    7000 3300
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7650 3200 7500 3200
+Wire Wire Line
+	7000 3200 7000 3300
+Wire Wire Line
+	4800 4500 5450 4500
+Wire Wire Line
+	4800 4400 5450 4400
+Wire Wire Line
+	4800 4300 5450 4300
+Wire Wire Line
+	4800 4200 5450 4200
+Wire Wire Line
+	4800 4100 5450 4100
+Wire Wire Line
+	4800 4000 5450 4000
+Wire Wire Line
+	4800 3900 5450 3900
+Wire Wire Line
+	5950 4800 5950 4950
+Wire Wire Line
+	4800 3700 5450 3700
+Wire Wire Line
+	4800 3600 5450 3600
+Wire Wire Line
+	4800 3500 5450 3500
+Wire Wire Line
+	4800 3400 5450 3400
+Wire Wire Line
+	4800 3800 5450 3800
+Wire Wire Line
+	4800 3300 5450 3300
+Wire Wire Line
+	4800 3200 5450 3200
+Wire Wire Line
+	4800 3100 5450 3100
+Wire Wire Line
+	4800 3000 5450 3000
+Wire Wire Line
+	6450 3200 6700 3200
+Wire Wire Line
+	6450 3700 6700 3700
+Wire Wire Line
+	6450 3600 6700 3600
+Wire Wire Line
+	5950 2600 5950 2700
+Wire Wire Line
+	6450 3800 6700 3800
+Wire Wire Line
+	6450 3900 6700 3900
+Wire Wire Line
+	6450 4300 6550 4300
+$Comp
+L 74xx:CD74HC4067M Uout1
+U 1 1 5CCDC541
+P 5950 3800
+F 0 "Uout1" H 5950 3350 50  0000 C CNN
+F 1 "CD74HC4067M" V 5900 3800 50  0000 C CNN
+F 2 "Package_SO:SOIC-24W_7.5x15.4mm_P1.27mm" H 6850 2800 50  0001 C CIN
+F 3 "http://www.ti.com/lit/ds/symlink/cd74hc4067.pdf" H 5600 4650 50  0001 C CNN
+	1    5950 3800
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	7650 3000 7500 3000
+Wire Wire Line
+	7500 3000 7500 3200
+Connection ~ 7500 3200
+Wire Wire Line
+	7500 3200 7000 3200
+NoConn ~ 8650 2800
+NoConn ~ 8650 2900
+NoConn ~ 8250 2400
+NoConn ~ 8050 2400
+NoConn ~ 7650 2800
+NoConn ~ 8650 3900
+NoConn ~ 8650 4000
+NoConn ~ 8650 4100
+NoConn ~ 7650 4200
+NoConn ~ 7650 4100
+NoConn ~ 7650 3900
+NoConn ~ 7650 3800
+NoConn ~ 7650 3700
+NoConn ~ 7650 3600
+NoConn ~ 7650 3500
+Wire Wire Line
+	8050 4500 8050 4600
+Text Label 8750 3800 0    50   ~ 0
+EN
+Text Label 8750 3700 0    50   ~ 0
+S7
+Text Label 8750 3600 0    50   ~ 0
+S6
+Text Label 8750 3500 0    50   ~ 0
+S5
+Wire Wire Line
+	8650 3800 9150 3800
+Wire Wire Line
+	8650 3700 9150 3700
+Wire Wire Line
+	8650 3600 9150 3600
+Wire Wire Line
+	8650 3500 9150 3500
+$Comp
+L MCU_Module:Arduino_UNO_R3 A1
+U 1 1 5CCE519A
+P 8150 3400
+F 0 "A1" H 8150 4581 50  0000 C CNN
+F 1 "Arduino_UNO_R3" H 8150 4490 50  0000 C CNN
+F 2 "Module:Arduino_UNO_R3" H 8300 2350 50  0000 L CNN
+F 3 "https://www.arduino.cc/en/Main/arduinoBoardUno" H 7950 4450 50  0001 C CNN
+	1    8150 3400
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	8250 4500 8250 4600
+Wire Wire Line
+	8250 4600 8150 4600
+Wire Wire Line
+	8150 4600 8050 4600
+Connection ~ 8150 4600
+Wire Wire Line
+	8150 4500 8150 4600
+Connection ~ 8050 4600
+$Comp
+L power:GND #PWR09
+U 1 1 5CD060D2
+P 8050 4600
+F 0 "#PWR09" H 8050 4350 50  0001 C CNN
+F 1 "GND" H 8055 4427 50  0000 C CNN
+F 2 "" H 8050 4600 50  0001 C CNN
+F 3 "" H 8050 4600 50  0001 C CNN
+	1    8050 4600
+	-1   0    0    -1  
+$EndComp
+Wire Bus Line
+	2200 3700 2200 5200
+Wire Bus Line
+	6800 3200 6800 5200
+Wire Bus Line
+	9250 3100 9250 5200
+$Comp
+L Connector_Generic:Conn_02x16_Counter_Clockwise J1
+U 1 1 5CECD716
+P 4500 3700
+F 0 "J1" H 4550 4617 50  0000 C CNN
+F 1 "Conn_02x16_Counter_Clockwise" H 4550 4526 50  0000 C CNN
+F 2 "One27:One27_male_32pin" H 4500 3700 50  0001 C CNN
+F 3 "~" H 4500 3700 50  0001 C CNN
+	1    4500 3700
+	1    0    0    -1  
+$EndComp
+$EndSCHEMATC

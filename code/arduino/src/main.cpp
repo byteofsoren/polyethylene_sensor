@@ -4,6 +4,7 @@
 #define MAX_Y 10
 #define PINOFSETX 0
 #define PINOFSETY 4
+#define UNIQUE(M,N) 2*M*N - N - M
 
 
 
@@ -27,15 +28,32 @@ int read_data(char x, char y)
 {
     setmux(x,4,PINOFSETX);
     setmux(y,4,PINOFSETY);
-    return 0;
+    return analogRead(A0);
 }
 
 void setup()
 {
     Serial.begin(9600);
+    /* Set up the pins for the muxses */
+    for (int i = PINOFSETX; i < PINOFSETX + 8; i++) {
+        pinMode(i,OUTPUT);
+    }
+
 }
 
 void loop()
 {
+    char toPC[1000];
+    /* Acquire foam data */
+    int last = 0;
+    sprintf(toPC + last, "[");
+    last++;
+    for (char x = 0; x < MAX_X; x++) {
+        for (char y = 0; y < MAX_Y; y++) {
+            last += sprintf(toPC + last, "%d,%d,%d;",x,y,read_data(x,y));
+        }
+    }
+    sprintf(toPC + last, "]");
 
+    Serial.print(toPC);
 }

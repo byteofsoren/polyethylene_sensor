@@ -18,7 +18,7 @@ def plot_poly(poly, start, stop,num):
     plt.plot(xp,list(map(poly, xp)))
 
 if __name__ == '__main__':
-    data = read_data('gridcalc.csv')
+    data = read_data('data/gridcalc.csv')
     poi = str(input("Plot or input [Plot/in]")).lower()
     x = data['points (n)'].values
     y = data['Vertex (M)'].values

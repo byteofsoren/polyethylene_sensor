@@ -91,12 +91,14 @@ void setup()
 void loop()
 {
     getdata();
+    int row = 0;
     if (Serial.available()) {
         Serial.print("[");
-        for (int row = 0; row < MAXDATA; row++) {
+        for (row = 0; row < MAXDATA - 1; row++) {
             Serial.print(data[row]);
             Serial.print(",");
         }
+        Serial.print(data[row]);
         Serial.println("]");
     } else {
         delay(1);

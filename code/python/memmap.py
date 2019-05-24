@@ -46,12 +46,21 @@ class mymap(object):
     def get_shape(self):
         return tuple(self._conf['shape'])
 
-if __name__ == '__main__':
-    data_shape = (5,6)
+def create_temporary():
+    # create tempfile
     cfile = path.join(mkdtemp(),'data.dat')
+    print(cfile)
+    # Add that to the config
+    confpath = 'data/mymap.json'
+    data_shape = (5,6)
     config = {'datapath':cfile, 'shape':data_shape}
     with open(confpath, 'w') as conf_out:
         json.dump(config, conf_out)
+
+
+if __name__ == '__main__':
+    create_temporary()
+    data_shape = (8,8)
     # -- Test if if work ---
     A = np.random.normal(0.0,0.5,data_shape)
     B = np.zeros(data_shape)
@@ -60,7 +69,9 @@ if __name__ == '__main__':
     sleep(1)
     r = mymap()
     r.read(B)
+    print("A=")
     print(A)
+    print("B=")
     print(B)
-    print(np.testing.assert_almost_equal(A,B))
+    print("Equal" + str(np.testing.assert_almost_equal(A,B)))
 

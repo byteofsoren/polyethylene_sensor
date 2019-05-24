@@ -1,68 +1,57 @@
 from memmap import mymap
 import json
 import numpy as np
-from time import sleep
 import serial
+import time
 import pandas as pd
 
-
-virtual_serial = True
-
-class arduino(object):
-    """docstring for arduino"""
-    def __init__(self, connection:str):
-        self._connection = connection
-        self._memory = mymap()
-        self._confpath = 'data/mymap.json'
-        # Read the data and store in in _conf
-        with open(self._confpath, 'r') as cf:
-            self._conf = json.load(cf)
-
-        if not virtual_serial:
-            self._serial = serial.Serial(connection, 115200)
-        # Load the matrix build
-        self._load:pd.DataFrame = pd.read_csv('data/meansToMatrix.csv', names=['a','b'], delimiter=';')
-        # for i, row in self._load.iterrows():
-        #     pass
-        #     print("{a} connect to {b}.".format(a=row['a'],b=row['b']))
-
+class arduino:
+    """description"""
+    def __init__(self):
+        self.set_serial('/dev/ttyACM0', 9600)
+        self._serial.flush()
+        self._save = mymap()
+        # self._sworder = pd.read_csv('data/switchingOrder.csv', name=['from', 'to'], delimiter=';')
+        self._meatomat = pd.read_csv('data/meansToMatrix.csv',delimiter=';', names=['from', 'to'])
 
     def read_data(self):
-        """
-        Description: Reads the data from the Arduino
-        """
-        if virtual_serial:
-            shape = (5,5)
-            self._data = np.random.normal(0,0.5,shape)
+        self._dataraw = str(self._serial.readline())
+        if (self._dataraw[2] == '[') and (self._dataraw[-6] == ']'):
+            pruned = self._dataraw[3:-6]
+            self._datanp = np.array(list(map(int, pruned.split(','))))
         else:
-            while (self._serial.inWaiting() == 0):
-                pass
-            text:str = self._serial.readline()
-            if (text[0] == '[') and (text[-1] == ']'):
-                text = text.replace('[', '')
-                text = text.replace(']', '')
-                indata = list(map(float, text.split(',')))
-                for index,row in self._load.iterrows():
-                    pass
-                    # Construct the data array.
-            else:
-                print("Incorrect data skipping this one")
-        pass
+            print("Baad data")
 
-    def write_data(self):
-        """
-        Description: Writes the data to the shared memmory.
-        """
-        self._memory.write(self._data)
-        pass
+    def port_data(self):
+        # Ine here the data needs to be converted to an MxN pixel array.
+        msize = (8,8)
+        medmat = np.zeros(msize)
+        index = 0
+        for row in np.arange(msize[0]):
+            for col in np.arange(msize[1]):
+                idx = self._meatomat.iloc(index)
+                medmat[row,col] = 1/2 * (self._datanp[int(idx['from'])] + self._datanp[int(idx['to'])])
+                index += 1
+
+        print(medmat)
+        #self._save.write()
+
+    def set_serial(self, port, speed):
+        self._port = port
+        self._speed = speed
+        try:
+            self._serial = serial.Serial(self._port, self._speed)
+        except Exception as e:
+            print(f"Faile: {e}")
+            raise e
+
+
 
 def main():
+    ard = arduino()
     while True:
-        print("mani_arduino")
-        ard = arduino('/dev/ttyUSB0')
         ard.read_data()
-        ard.write_data()
-        sleep(np.random.random())
+        ard.port_data()
     pass
 
 if __name__ == '__main__':

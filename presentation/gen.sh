@@ -1,0 +1,1 @@
+/home/r00tr4t/.mylib/latex/gen.sh

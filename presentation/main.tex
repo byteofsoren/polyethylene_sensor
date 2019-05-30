@@ -27,9 +27,10 @@ build spatial object awareness in robotic grippers}
     % #doc .NH
     % #doc Introduction
     % #doc .PP
-    % #doc The most common robot gripper is as in this picture. Two flat often metal sheets pressing down on the
-    % #doc tool it try to grab. No information on the shape, texture or features.
-    % #doc In this work an attempt to create an sensor that could give robots an way to 'feel'
+    % #doc Today, the most common robot gripper still looks like the one this picture. 
+    % #doc Two flat sheets, often made out of metal, press down on any tool that the arm is trying to grab.
+    % #doc There is no way to get information on shape, texture or features of the object.
+    % #doc In this work, we attempt to create a sensor that could begin to rectify the absence of these features.
 \end{frame}
 
 \begin{frame}
@@ -42,9 +43,10 @@ Polyethylene Black Foam}
     % #doc .NH
     % #doc Conductive foam.
     % #doc .PP
-    % #doc What is  What is High Density Conductive Polyethylene Black Foam you might wonder.
-    % #doc That foam is the foam you use to protect the Integrated circuits from static electricity.
-
+    % #doc What is Conductive foam (High Density Conductive Polyethylene Black Foam) you might wonder.
+    % #doc This is the foam that we use to protect Integrated circuits from static electricity.
+    % #doc Amoungst other features, the foam has excelent conductive ability to counteract static charges, 
+    % #doc which is exactly what enables us to use it in our implementation. 
 \end{frame}
 
 \section{Method}%
@@ -57,13 +59,14 @@ Polyethylene Black Foam}
         \includegraphics[width=\textwidth]{img/foam_howto.png}
     \end{center}
     % #doc .NH
-    % #doc How it works
+    % #doc How it works - A simplified model
     % #doc .PP
-    % #doc How this works on a high abstraction is do tho three properties of the material.
-    % #doc Firstly the material have a given resistance per meter.
-    % #doc Secondly the material have empty holes.
-    % #doc Third. Because the material is a foam the material could be squeezed
-    % #doc thus short circuit the material the resistance is changing.
+    % #doc First recall that the material is conductive so the material have a given resistance per meter.
+    % #doc Now, the structure of the material is full of holes which obviously counduct very poorly.
+    % #doc Thus, the electrons that moves through the foam move on thr surface of bubbles inside the material.
+    % #doc The final property of the conductive foam that is utilized is that when squeezed, it will return to its original* shape.
+    % #doc When the material is squeezed, the bubbles are pressed togather basicaly short circuiting the surfaces that the electrons travel decreasing resistance.
+    % #doc It has not been in the scoped of our project to test how durable this material is.
 \end{frame}
 
 \begin{frame}

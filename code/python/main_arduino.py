@@ -14,6 +14,7 @@ class arduino:
         #self._mediansToMatrix = pd.read_csv('data/meansToMatrix.csv',delimiter=';', names=['from', 'to'], dtype=np.int8)
         self._mediansToMatrix = pd.read_csv('data/meansToMatrix.csv',delimiter=';', names=['from', 'to'])
         self._datanp = np.zeros((8, 8))
+        self.use_serial = False
         self._medmax = max(
                 max(self._mediansToMatrix['from']),
                 max(self._mediansToMatrix['to'])
@@ -25,7 +26,22 @@ class arduino:
             time.sleep(0.5)
         print("read serial")
         # 3434534 [239,234,342,234]....
-        self._dataraw = str(self._serial.readline())
+        # If you want to read the data from the arduino then set use_serial=True
+        if self.use_serial:
+            self._dataraw = str(self._serial.readline())
+        else:
+            #self._dataraw = '[123,123,43,123,321,322]'
+            # self._dataraw = "[{}]".format(','.join([str(x) for x in d]))
+            #
+            """
+            Reading the data list array to a string.
+            Then reformat the data into a format that the code
+            expects. The first variable below is a hack to solve that
+            än ',' apears in the wrong place redering the data invalid.
+            """
+            with open('data/testArray.csv', 'r') as fp:
+                first = fp.read().replace('\n','')
+                self._dataraw = first + fp.read().replace('\n',',')
         print(self._dataraw)
         left = self._dataraw.find('[')
         right = self._dataraw.find(']')

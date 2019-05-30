@@ -207,7 +207,7 @@ Polyethylene Black Foam}
 \begin{frame}
     \frametitle{Results}
     \begin{center}
-        \includegraphics[width=.8\textwidth]{img/foam_plot.png}
+        \includegraphics[width=.6\textwidth]{img/foam_plot.png}
     \end{center}
 
 \end{frame}
@@ -220,7 +220,19 @@ Polyethylene Black Foam}
 
 \end{frame}
 
+\begin{frame}
+    \frametitle{The algorithm}
+    \begin{center}
+        \includegraphics[width=\textwidth]{img/grid0.png}
+    \end{center}
+\end{frame}
 
+\begin{frame}
+    \begin{center}
+        \textbf{The end}\\
+        Questions?
+    \end{center}
+\end{frame}
 
 \end{document}
 

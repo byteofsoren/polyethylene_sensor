@@ -4,6 +4,10 @@
 \title{Using High Density Conductive
 Polyethylene Black Foam as a restive sensor to
 build spatial object awareness in robotic grippers}
+% #doc .TL
+% #doc Using High Density Conductive
+% #doc Polyethylene Black Foam as a restive sensor to
+% #doc build spatial object awareness in robotic grippers
 \author{Magnus Sörensen, Daniel Stenekap}
 \institute{Märlardalens högskola}
 \date{2019}
@@ -11,9 +15,9 @@ build spatial object awareness in robotic grippers}
 \frame{\titlepage}
 
 
-\begin{frame}
-    \tableofcontents
-\end{frame}
+% \begin{frame}
+%     \tableofcontents
+% \end{frame}
 
 \section{Introduction}%
 \label{sec:intro}
@@ -27,7 +31,8 @@ build spatial object awareness in robotic grippers}
     % #doc .NH
     % #doc Introduction
     % #doc .PP
-    % #doc Today, the most common robot gripper still looks like the one this picture. 
+    % #doc .BX Magnus
+    % #doc Today, the most common robot gripper still looks like the one this picture.
     % #doc Two flat sheets, often made out of metal, press down on any tool that the arm is trying to grab.
     % #doc There is no way to get information on shape, texture or features of the object.
     % #doc In this work, we attempt to create a sensor that could begin to rectify the absence of these features.
@@ -45,22 +50,47 @@ Polyethylene Black Foam}
     % #doc .PP
     % #doc What is Conductive foam (High Density Conductive Polyethylene Black Foam) you might wonder.
     % #doc This is the foam that we use to protect Integrated circuits from static electricity.
-    % #doc Amoungst other features, the foam has excelent conductive ability to counteract static charges, 
-    % #doc which is exactly what enables us to use it in our implementation. 
+    % #doc Amoungst other features, the foam has conductive ability to lead away static charges,
+    % #doc which is exactly what enables us to use it in our implementation.
 \end{frame}
 
 \section{Method}%
 \label{sec:Method}
 
+% ### Deprecated ####
+% \begin{frame}
+%     \frametitle{How does it work?}
+%     \begin{center}
+%         \textbf{Dijkstra's algorithm}
+%         \includegraphics[width=\textwidth]{img/dijkstra.png}
+%     \end{center}
+%     % doc .NH
+%     % doc How it works - A simplified model
+%     % doc .PP
+%     % doc Foam have the special property of being full of holes
+%     % doc and in this case with conductive foam the holes could
+%     % doc be tough of as following the Dijkstra algorithm
+%     % doc where the path from one side of the foam to the
+%     % doc other side is the shortest path.
+%     % doc In the proposed work the quashing of the foam is like
+%     % doc squashing the Dijkstra path so that path short circuits.
+%     % doc Thus then because the material is conductive an defined
+%     % doc resistance the resistance between two poles are changed
+%     % doc when the material is squeezed.
+
+% \end{frame}
 
 \begin{frame}
-    \frametitle{How does it work?}
+    \frametitle{How is this used?}
     \begin{center}
         \includegraphics[width=\textwidth]{img/foam_howto.png}
     \end{center}
     % #doc .NH
-    % #doc How it works - A simplified model
+    % #doc How it used.
     % #doc .PP
+    % doc Then by just connecting measure the resistance between
+    % doc two points the shape of the foam could be determined.
+
     % #doc First recall that the material is conductive so the material have a given resistance per meter.
     % #doc Now, the structure of the material is full of holes which obviously counduct very poorly.
     % #doc Thus, the electrons that moves through the foam move on thr surface of bubbles inside the material.
@@ -68,6 +98,9 @@ Polyethylene Black Foam}
     % #doc When the material is squeezed, the bubbles are pressed togather basicaly short circuiting the surfaces that the electrons travel decreasing resistance.
     % #doc It has not been in the scoped of our project to test how durable this material is.
 \end{frame}
+
+\subsection{What was done}%
+\label{sub:what}
 
 \begin{frame}
     \frametitle{What was done}
@@ -86,11 +119,13 @@ Polyethylene Black Foam}
     \begin{center}
         \includegraphics[width=.8\textwidth]{img/resistor_mapp_modell.png}
     \end{center}
-    % #doc .PP
     % #doc That grid of measurement pins in the foam could be abstracted down to a resistor map as shown.
     % #doc In the implementation as shown later the pins in this map will be altering from positive to negative.
     % #doc And by the implemented algorithm a image of the features in the pressed down figure could be shown.
 \end{frame}
+
+\subsection{How measurements is done}%
+\label{sub:howmmesurment}
 
 \begin{frame}
     \frametitle{How the measurements was done}
@@ -107,16 +142,22 @@ Polyethylene Black Foam}
     % #doc an part of a voltage divider. Read by the
     % #doc .B Vread
     % #doc input to the Arduino.
+
 \end{frame}
+
+\subsection{The algorithm}%
+\label{sub:algorithm}
 
 \begin{frame}
     \frametitle{The algorithm}
     \begin{center}
         \includegraphics[width=\textwidth]{img/grid0.png}
     \end{center}
+
     % #doc .NH
     % #doc How the algorithm works
     % #doc .PP
+    % #doc .BX Daniel
     % #doc To generate an matrix from the measurements the following algorithm visualised here are proposed.
     % #doc On the left the abstracted resistor grid representing the foam and on the right an outline of an matrix is shown.
     % #doc In this demo the matrix wont be filled with values. Instead the focus is to show how the values are acquired.
@@ -146,7 +187,7 @@ Polyethylene Black Foam}
         \includegraphics[width=.8\textwidth]{img/grid3.png}
     \end{center}
     % #doc .IP 2
-    % #doc , Third measurement
+    % #doc Third measurement
 \end{frame}
 
 \begin{frame}
@@ -165,6 +206,10 @@ Polyethylene Black Foam}
     \end{center}
 \end{frame}
 
+
+\subsection{Hardware implementation}%
+\label{sub:hardware_imp}
+
 \begin{frame}
     \frametitle{Hardware implementation}
     \begin{center}
@@ -174,9 +219,11 @@ Polyethylene Black Foam}
             \includegraphics[width=.33\textwidth]{img/foam_table.png}
         \end{tabular}
     \end{center}
+
     % #doc .NH
     % #doc Hardware implementation.
     % #doc .PP
+    % #doc .BX Magnus
     % #doc The hardware that was intended to be implemented in this project
     % #doc have tree parts.
     % #doc .IP 1
@@ -188,18 +235,46 @@ Polyethylene Black Foam}
 
 \end{frame}
 
+\subsection{Software design}%
+\label{sub:soft_design}
+
+\begin{frame}
+    \frametitle{Software design}
+    \begin{center}
+        \includegraphics[width=.8\textwidth]{img/software_design.png}
+    \end{center}
+    % #doc .NH
+    % #doc Software design.
+    % #doc .PP
+    % #doc The software design used in this project is done in three layers.
+    % #doc As stated the first layer are the Arduino, who is programmed tho set the
+    % #doc multiplexer and send the data over the serial.
+    % #doc The first python program reads the data from the serial and converts it from
+    % #doc string to numbers. Then the
+    % #doc .CD
+    % #doc meanstoMatrix()
+    % #doc .DE
+    % #doc algorithm is used to convert the reading to pixel data and finally that data is sent over
+    % #doc to the 3d display program by storing the data in an temporary file.
+
+\end{frame}
+
+\section{Results}%
+\label{sec:results}
+
 \begin{frame}
     \frametitle{Results}
-    \begin{center}
         Due to project complexity, the electronics of the project could not be completed within time scope.
-    \end{center}
+    \setbeamertemplate{itemize items}[ball]
     \begin{itemize}
         \item Proof of concept measurements of the foam resistance drop when exposed to pressure.
         \item Result from program with dummy text string as input is shown on the next slide. This corresponds somewhat to Proof of concept measurements.
     \end{itemize}
+
     % #doc .NH
     % #doc Results.
     % #doc .PP
+    % #doc .BX Daniel
     % #doc Do to project complexity, time and unforeseen problems like the Voltera accuracy smears out the traces and don't support Linux.
     % #doc What we did instead. Proof of concept measurements of the foam resistance drop when exposed to pressure.
     % #doc Result from program with dummy text string as input is shown on the next slide. This corresponds somewhat to Proof of concept measurements.
@@ -230,12 +305,15 @@ Polyethylene Black Foam}
     \end{center}
 \end{frame}
 
+\section{Questions}%
+\label{sec:qa}
+
+
 \begin{frame}
     \begin{center}
         \textbf{The end}\\
         Questions?
     \end{center}
 \end{frame}
-
 \end{document}
 

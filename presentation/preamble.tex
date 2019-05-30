@@ -73,7 +73,7 @@
 \def\thesectiondis{\thesection.} \def\thesubsectiondis{\thesectiondis\arabic{subsection}.} \def\thesubsubsectiondis{\thesubsectiondis\arabic{subsubsection}.} \def\theparagraphdis{\thesubsubsectiondis\arabic{paragraph}.}
 
 % Among other things, allows for items to be bold - Added by Ulrik
-\usepackage{enumitem}
+% \usepackage{enumitem}
 
 \usepackage{cite}
 % Imported ragged for justefiing text in the \who statement
@@ -115,4 +115,12 @@
 \newcommand{\si}[1]{$(#1)$}
 \usetheme{Boadilla}
 % \usetheme{Madrid}
+\AtBeginSection[]
+{
+  \begin{frame}
+  \frametitle{Contents}
+  \tiny{\tableofcontents[currentsection]}
+  \end{frame}
+}
 
+\setbeamertemplate{itemize items}[ball]

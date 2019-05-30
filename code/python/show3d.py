@@ -20,6 +20,7 @@ class plot3d:
         plt.ion();
         self._fig = plt.figure()
         self._ax = self._fig.add_subplot(111, projection='3d' )
+        self._ax.set_zlim([0,1050])
         self._surf= self._ax.plot_surface(self._grid[0], self._grid[1],self._matrix, antialiased=False)
         plt.draw()
         self._fig.canvas.flush_events()

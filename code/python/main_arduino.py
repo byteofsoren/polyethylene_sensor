@@ -8,7 +8,7 @@ import pandas as pd
 class arduino:
     """description"""
     def __init__(self):
-        self.set_serial('/dev/ttyACM0', 9600)
+        self.set_serial('/dev/ttyACM1', 9600)
         self._save = mymap()
         # self._sworder = pd.read_csv('data/switchingOrder.csv', name=['from', 'to'], delimiter=';')
         #self._mediansToMatrix = pd.read_csv('data/meansToMatrix.csv',delimiter=';', names=['from', 'to'], dtype=np.int8)

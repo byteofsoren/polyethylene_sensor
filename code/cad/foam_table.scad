@@ -12,7 +12,7 @@ table(w,d,h);
 
 translate([15,15,h-13.01])
     pin_array(5,5,4);
-translate([0,0,h])
+translate([0,0,h+0.01])
 color("DarkGreen",0.5)
 cube([w,d,2]);
 
@@ -53,7 +53,7 @@ module pin_array(xcount,ycount,skip)
     {
         for (ypin = [1:inc:inc*nr_of_pins_in_y-1])
         {
-            pin(xpin,ypin);
+            pin(xpin,ypin,0);
             //echo(xpin,ypin);
         }
     }

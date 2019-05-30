@@ -8,7 +8,7 @@ import pandas as pd
 class arduino:
     """description"""
     def __init__(self):
-        self.set_serial('/dev/ttyACM1', 9600)
+        self.set_serial('/dev/ttyACM0', 9600)
         self._save = mymap()
         # self._sworder = pd.read_csv('data/switchingOrder.csv', name=['from', 'to'], delimiter=';')
         #self._mediansToMatrix = pd.read_csv('data/meansToMatrix.csv',delimiter=';', names=['from', 'to'], dtype=np.int8)
@@ -24,14 +24,18 @@ class arduino:
             self._serial.open()
             time.sleep(0.5)
         print("read serial")
+        # 3434534 [239,234,342,234]....
         self._dataraw = str(self._serial.readline())
         print(self._dataraw)
         left = self._dataraw.find('[')
         right = self._dataraw.find(']')
         if (left > 0) and (right > left):
+            # 239,234,342,234
             pruned = self._dataraw[left+1:right]
             try:
+                # 239.ee,234,342,234
                 self._datanp = np.array(list(map(lambda x: int(x), pruned.split(','))))
+                # np.array([239,234,342,234])
             except Exception as e:
                 print(f"Exception: {e}")
                 self._datavalid = False

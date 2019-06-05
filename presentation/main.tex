@@ -91,6 +91,7 @@ Polyethylene Black Foam}
     % doc Then by just connecting measure the resistance between
     % doc two points the shape of the foam could be determined.
 
+    % #doc .BX Daniel
     % #doc First recall that the material is conductive so the material have a given resistance per meter.
     % #doc Now, the structure of the material is full of holes which obviously counduct very poorly.
     % #doc Thus, the electrons that moves through the foam move on thr surface of bubbles inside the material.
@@ -110,6 +111,7 @@ Polyethylene Black Foam}
     % #doc .NH
     % #doc What was done
     % #doc .PP
+    % #doc .BX Magnus
     % #doc The approach to measure this is based an grid array of measurement pins inserted in to the bottom
     % #doc of the foam.
 \end{frame}
@@ -127,23 +129,6 @@ Polyethylene Black Foam}
 \subsection{How measurements is done}%
 \label{sub:howmmesurment}
 
-\begin{frame}
-    \frametitle{How the measurements was done}
-    \begin{center}
-        \includegraphics[width=.8\textwidth]{img/arduino_foam.png}
-    \end{center}
-    % #doc .NH
-    % #doc How the measurements was done.
-    % #doc .PP
-    % #doc An Arduino was used for this project to measure the foam.
-    % #doc In this figure an high abstraction electrical flow chart is presented.
-    % #doc Two muxes is used to switch the measurements from pair to pair.
-    % #doc Observe that the resitor with the variable resistance in the foam acts as
-    % #doc an part of a voltage divider. Read by the
-    % #doc .B Vread
-    % #doc input to the Arduino.
-
-\end{frame}
 
 \subsection{The algorithm}%
 \label{sub:algorithm}
@@ -151,7 +136,7 @@ Polyethylene Black Foam}
 \begin{frame}
     \frametitle{The algorithm}
     \begin{center}
-        \includegraphics[width=\textwidth]{img/grid0.png}
+        \includegraphics[width=.8\textwidth]{img/grid0.png}
     \end{center}
 
     % #doc .NH
@@ -235,6 +220,23 @@ Polyethylene Black Foam}
 
 \end{frame}
 
+\begin{frame}
+    \frametitle{How the measurements was done}
+    \begin{center}
+        \includegraphics[width=.8\textwidth]{img/arduino_foam.png}
+    \end{center}
+    % #doc .NH
+    % #doc How the measurements was done.
+    % #doc .PP
+    % #doc An Arduino was used for this project to measure the foam.
+    % #doc In this figure an high abstraction electrical flow chart is presented.
+    % #doc Two muxes is used to switch the measurements from pair to pair.
+    % #doc Observe that the resitor with the variable resistance in the foam acts as
+    % #doc an part of a voltage divider. Read by the
+    % #doc .B Vread
+    % #doc input to the Arduino.
+
+\end{frame}
 \subsection{Software design}%
 \label{sub:soft_design}
 

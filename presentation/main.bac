@@ -28,7 +28,6 @@ build spatial object awareness in robotic grippers}
     \begin{center}
         \includegraphics[width=.5\textwidth]{img/rob0078.jpg}
     \end{center}
-    % #doc .KS
     % #doc .NH
     % #doc Introduction
     % #doc .PP
@@ -51,30 +50,48 @@ Polyethylene Black Foam}
     % #doc .PP
     % #doc What is Conductive foam (High Density Conductive Polyethylene Black Foam) you might wonder.
     % #doc This is the foam that we use to protect Integrated circuits from static electricity.
-    % #doc Amoungst other features, the foam has conductive ability to counteract static charges,
+    % #doc Amoungst other features, the foam has conductive ability to lead away static charges,
     % #doc which is exactly what enables us to use it in our implementation.
 \end{frame}
 
 \section{Method}%
 \label{sec:Method}
 
+% ### Deprecated ####
+% \begin{frame}
+%     \frametitle{How does it work?}
+%     \begin{center}
+%         \textbf{Dijkstra's algorithm}
+%         \includegraphics[width=\textwidth]{img/dijkstra.png}
+%     \end{center}
+%     % doc .NH
+%     % doc How it works - A simplified model
+%     % doc .PP
+%     % doc Foam have the special property of being full of holes
+%     % doc and in this case with conductive foam the holes could
+%     % doc be tough of as following the Dijkstra algorithm
+%     % doc where the path from one side of the foam to the
+%     % doc other side is the shortest path.
+%     % doc In the proposed work the quashing of the foam is like
+%     % doc squashing the Dijkstra path so that path short circuits.
+%     % doc Thus then because the material is conductive an defined
+%     % doc resistance the resistance between two poles are changed
+%     % doc when the material is squeezed.
+
+% \end{frame}
+
 \begin{frame}
-    \frametitle{How does it work?}
-    \begin{center}
-        \includegraphics[width=\textwidth]{img/dijkstra.png}
-    \end{center}
-
-
-\end{frame}
-
-\begin{frame}
-    \frametitle{How does it work?}
+    \frametitle{How is this used?}
     \begin{center}
         \includegraphics[width=\textwidth]{img/foam_howto.png}
     \end{center}
     % #doc .NH
-    % #doc How it works - A simplified model
+    % #doc How it used.
     % #doc .PP
+    % doc Then by just connecting measure the resistance between
+    % doc two points the shape of the foam could be determined.
+
+    % #doc .BX Daniel
     % #doc First recall that the material is conductive so the material have a given resistance per meter.
     % #doc Now, the structure of the material is full of holes which obviously counduct very poorly.
     % #doc Thus, the electrons that moves through the foam move on thr surface of bubbles inside the material.
@@ -94,6 +111,7 @@ Polyethylene Black Foam}
     % #doc .NH
     % #doc What was done
     % #doc .PP
+    % #doc .BX Magnus
     % #doc The approach to measure this is based an grid array of measurement pins inserted in to the bottom
     % #doc of the foam.
 \end{frame}
@@ -111,33 +129,16 @@ Polyethylene Black Foam}
 \subsection{How measurements is done}%
 \label{sub:howmmesurment}
 
-\begin{frame}
-    \frametitle{How the measurements was done}
-    \begin{center}
-        \includegraphics[width=.8\textwidth]{img/arduino_foam.png}
-    \end{center}
-    % #doc .NH
-    % #doc How the measurements was done.
-    % #doc .PP
-    % #doc An Arduino was used for this project to measure the foam.
-    % #doc In this figure an high abstraction electrical flow chart is presented.
-    % #doc Two muxes is used to switch the measurements from pair to pair.
-    % #doc Observe that the resitor with the variable resistance in the foam acts as
-    % #doc an part of a voltage divider. Read by the
-    % #doc .B Vread
-    % #doc input to the Arduino.
-    % #doc .KE
-\end{frame}
 
 \subsection{The algorithm}%
 \label{sub:algorithm}
 
-    % #doc .KS
 \begin{frame}
     \frametitle{The algorithm}
     \begin{center}
-        \includegraphics[width=\textwidth]{img/grid0.png}
+        \includegraphics[width=.8\textwidth]{img/grid0.png}
     \end{center}
+
     % #doc .NH
     % #doc How the algorithm works
     % #doc .PP
@@ -190,7 +191,7 @@ Polyethylene Black Foam}
     \end{center}
 \end{frame}
 
-    % #doc .KE
+
 \subsection{Hardware implementation}%
 \label{sub:hardware_imp}
 
@@ -203,7 +204,7 @@ Polyethylene Black Foam}
             \includegraphics[width=.33\textwidth]{img/foam_table.png}
         \end{tabular}
     \end{center}
-    % #doc .KS
+
     % #doc .NH
     % #doc Hardware implementation.
     % #doc .PP
@@ -219,6 +220,23 @@ Polyethylene Black Foam}
 
 \end{frame}
 
+\begin{frame}
+    \frametitle{How the measurements was done}
+    \begin{center}
+        \includegraphics[width=.8\textwidth]{img/arduino_foam.png}
+    \end{center}
+    % #doc .NH
+    % #doc How the measurements was done.
+    % #doc .PP
+    % #doc An Arduino was used for this project to measure the foam.
+    % #doc In this figure an high abstraction electrical flow chart is presented.
+    % #doc Two muxes is used to switch the measurements from pair to pair.
+    % #doc Observe that the resitor with the variable resistance in the foam acts as
+    % #doc an part of a voltage divider. Read by the
+    % #doc .B Vread
+    % #doc input to the Arduino.
+
+\end{frame}
 \subsection{Software design}%
 \label{sub:soft_design}
 
@@ -240,7 +258,7 @@ Polyethylene Black Foam}
     % #doc .DE
     % #doc algorithm is used to convert the reading to pixel data and finally that data is sent over
     % #doc to the 3d display program by storing the data in an temporary file.
-    % #doc .KE
+
 \end{frame}
 
 \section{Results}%
@@ -254,7 +272,7 @@ Polyethylene Black Foam}
         \item Proof of concept measurements of the foam resistance drop when exposed to pressure.
         \item Result from program with dummy text string as input is shown on the next slide. This corresponds somewhat to Proof of concept measurements.
     \end{itemize}
-    % #doc .KS
+
     % #doc .NH
     % #doc Results.
     % #doc .PP
@@ -292,12 +310,12 @@ Polyethylene Black Foam}
 \section{Questions}%
 \label{sec:qa}
 
+
 \begin{frame}
     \begin{center}
         \textbf{The end}\\
         Questions?
     \end{center}
 \end{frame}
-    % #doc .KE
 \end{document}
 
